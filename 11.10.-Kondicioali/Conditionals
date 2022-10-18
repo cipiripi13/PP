@@ -1,0 +1,27 @@
+// var a = 3;
+// if (a<10) {
+//     console.log('a je manje od 10')
+// } else {
+//     console.log('a nije manje od 10')
+// };
+
+// var result = '';
+// var b = 3;
+//  if(b>2) {
+//     result = b + ' je vece od 2';
+//  }
+//   console.log(result); 
+
+var a = 4;
+var b = 6;
+ if (a>b) {
+    console.log(a);
+ } else if (b>a) {
+    
+        console.log(b);
+    }
+
+  
+
+    
+
