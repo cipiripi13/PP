@@ -451,4 +451,3 @@ switch(a / b){
    
    }
    console.log(result);
-
