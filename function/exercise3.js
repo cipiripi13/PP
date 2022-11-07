@@ -47,3 +47,37 @@ function filter (array) {
 //  4. Write a function that reverses a number. The result must be a number.
 // 12345 -&gt; 54321 // Output must be a number
 
+
+function reverseNumber(number) {
+    var revNumber = 0;
+    while (number > 0) {
+      revNumber = (revNumber * 10) + (number % 10);
+      console.log(revNumber);
+      number = Math.floor(number / 10);
+      console.log(number);
+     
+   
+    }
+    return revNumber;
+  }
+  console.log(reverseNumber(1876));
+  console.log(reverseNumber(1234));
+
+//   5. Write a function to get the last element of an array. Passing a parameter &#39;n&#39; will return the
+// last &#39;n&#39; elements of the array.
+// [7, 9, 0, -2] -&gt; -2
+// [7, 9, 0, -2], 2 -&gt; [0, -2]
+
+// function lastElement (array) {
+//     var array = [];
+//     for(i=0; i<array.length; i++){
+//         console.log( array[array.length-1]);
+//     }
+//     return;
+// }
+// console.log(lastElement([7, 9, 0, -2]));
+ var array = [7, 9, 0, -2];
+for(i=0; i<array.length-1; i++){
+    console.log( array[array.length-1]);
+}
+

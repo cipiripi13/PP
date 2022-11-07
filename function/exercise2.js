@@ -204,18 +204,20 @@ console.log(prostBr(6));
 // &quot;My random string&quot;, &quot;+&quot; -&gt; &quot;My+random+string&quot;
 // &quot;My random string&quot; -&gt; &quot;My-random-string&quot;
 
-function separatorOfSpace(string) {
-    
+function separatorOfSpace(string, sep) {
+    var string2 = ''
     for(i=0; i<string.length; i++){
-        if(string[i] === ' '){
-           
-         string[i] = '+' ;
+        var x = string[i] === ' ' ?  sep : string[i] ;
+           string2 += x;
       
         }
+        return string2;
         
-    } return string;
-}
-console.log(separatorOfSpace('kaca k'));
+    } 
+
+console.log(separatorOfSpace('kaca k', '-'));
+
+
 
 // 11. Write a function that converts an array of strings into an array of numbers. Filter out all
 // non-numeric values.
