@@ -16,7 +16,7 @@ console.log(favoriteCaffe);
 var favoriteMovie = {
     name: 'Simon Birch',
     actors: {
-        lead1: 'Joseph Mazzello'.
+        lead1: 'Joseph Mazzello',
         lead2: 'Oliver Platt'
     },
     director: 'Mark Steven Johnson',
@@ -80,11 +80,11 @@ function prepareMeal (name, type, complexityValue, ingredients, time, instructio
         allTheIngredients: function(){
             return recipe.listOfIngredients;   // ili samo return ingredients
         },
-        under15: function(){
+        under15: function(time){
             if(time < 15){
-                return 'This meal can be prep under 15 minutes';
+                console.log('This meal can be prep under 15 minutes');
             } else {
-                'This meal requires more than 15 minutes to be prep';
+                console.log('This meal requires more than 15 minutes to be prep');
             }
         },
         delIngred: function(someI){
@@ -104,6 +104,8 @@ var meal = prepareMeal('Pasta', 'mediterranean meal', 2,['Pasta', 'Milk', 'Meat'
 console.log(meal);
 console.log(meal.allTheIngredients());
 console.log(meal.delIngred('Eggs'));
-console.log(meal.under15());
+console.log(meal.under15(30));
+console.log(meal.under15(13));
+console.log(meal.complexity);
 
 

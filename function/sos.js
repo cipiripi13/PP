@@ -157,9 +157,9 @@ function printArray (array){
     for(i=0; i<array.length; i++){
         console.log(array[i]);
     }
-    return array[i];
+    
 }
-console.log(printArray([78, 111, 4, 4321]));
+printArray([78, 111, 4, 4321]);
 
 
 
