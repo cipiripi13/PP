@@ -199,24 +199,25 @@ console.log(median([15, 17, 99, 32, 60, 655]));
 // 10. Write a function to find the element that occurs most frequently.
 
 function mostFrequentEl (array){
-    var i =0;
+    var mostFrequentIndex =0;
     var count = 0;
-    var newAr = [];
-    var element = array[0];
-    for(i=0; i<array.length; i++){
-        if(element == array[i]){
-            newAr[i] = element;
-            
+    var maxCount = 0;
+    for( var i=0; i<array.length; i++){
+       for(j=0; j<array.length; j++){
+        if(array[i]=== array[j]){
             count++;
-           
-        }
-        if (element != array[i]){
-            newAr[i] = element;
-        }
+        } 
+
+       }
+       if(count>maxCount){
+        maxCount = count;
+        mostFrequentIndex = i;
+       }
+       count = 0;
         
      
     }
-    return element;
+    return array[mostFrequentIndex];
 }
 console.log(mostFrequentEl([1, 2, 4, 1, 5, 6, 1]));
 console.log(mostFrequentEl(['a', 1, 2, 'a', 'b']));
