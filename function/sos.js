@@ -1,5 +1,5 @@
 // 1. Write a function that checks if a given string contains digit 5.
-// Input: “1b895abd”
+// Input: '1b895abd”
 // Output: true
 
 function chekForFive (element, string){
@@ -14,10 +14,10 @@ function chekForFive (element, string){
 console.log(chekForFive(5,'1b895abd'));
 console.log(chekForFive(5,'1bser9re'));
 
-// 2. Write a function that in a given string replaces all the appearances of the string ‘JS’ with
-// ‘**’.
-// Input: “Programming in JS is super interesting!”
-// Output: “Programming in ** is super interesting!”
+// 2. Write a function that in a given string replaces all the appearances of the string 'JS' with
+// '**'.
+// Input: 'Programming in JS is super interesting!”
+// Output: 'Programming in ** is super interesting!”
 
 function replaceJS (string){
     var newString = "";
@@ -34,8 +34,8 @@ function replaceJS (string){
 console.log(replaceJS('Programming in JS is super interesting!'));
 
 // 3. Write a function that inserts a given character on a given position in the string.
-// Input: “Goo morning”, 4, ‘d’
-// Output: “Good morning”
+// Input: 'Goo morning”, 4, 'd'
+// Output: 'Good morning”
 
 function insertChar (position, string, letter){
     var stringNew = '';
@@ -52,8 +52,8 @@ function insertChar (position, string, letter){
 console.log(insertChar(4, 'Goo  morning', 'd'));
 
 // 4. Write a function that deletes a character from the given position in the string.
-// Input: “Goodd morning!”, 3
-// Output: “Good morning!”
+// Input: 'Goodd morning!”, 3
+// Output: 'Good morning!”
 // 
 
 function deleteEl (string, position){
@@ -125,9 +125,74 @@ console.log(chek([3, 4, 1, 3], [8, 9, 3, 1, 11, 4, 3]));
 console.log(chek([5, 2, 5, 7], [8, 9, 3, 1, 11, 4, 3]));
 
 // 8. Write a function that sorts an array of strings by the number of appearances of the letter
-// ‘a’ or ‘A’.
-// Input: [‘apple’, ‘tea’, ‘amazing’, ‘morning’, ‘JavaScript’]
-// Output: [‘morning’, ‘apple’, ‘tea’, ‘JavaScript’, ‘amazing’]
+// 'a' or 'A'.
+// Input: ['apple', 'tea', 'amazing', 'morning', 'JavaScript']
+// Output: ['morning', 'apple', 'tea', 'JavaScript', 'amazing']
+
+var res8 = (function sortArrayOfStrings(arr) {
+    function countAInString(string) {
+      var res = 0;
+      for (var i = 0; i < string.length; i++) {
+        if (string[i] === 'a' || string[i] === 'A') {
+          res++;
+        }
+      }
+      return res;
+    }
+    for (var i = 0; i < arr.length; i++) {
+      for (var j = i+1; j < arr.length; j++) {
+        if (countAInString(arr[i]) > countAInString(arr[j])) {
+          var temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+        }
+      }
+    }
+    return arr;
+    })(["apple", "tea", "amazing", "morning", "JavaScript"]);
+
+console.log(res8);
+
+// var arrayToSearchIn = ['apple', 'tea', 'amazing', 'morning', 'JavaScript']
+ 
+// var numberOfA = {};
+// for(var i=0; i<arrayToSearchIn.length; i++ ){
+//     var counter = 0;
+//     var nextWord = arrayToSearchIn[i];
+//     for(var k=0; k<nextWord.length; k++){
+//        if(nextWord[k] === 'a' || nextWord[k]=== 'A'){
+//             counter++;
+//        }
+//     }
+//     numberOfA[nextWord] = counter;
+//     console.log(numberOfA);
+    
+    
+ 
+//     // var sorted = Object.keys(numberOfA).sort((a,b) => a-b).reduce((obj,key) =>({
+//     //     ...obj,
+//     //     [key]: numberOfA[key]
+//     //   }),
+//     //   {}
+//     // )
+//     // console.log(sorted);
+
+// } 
+// for(var i=0; i<arrayToSearchIn.length; i++){
+   
+//     console.log(numberOfA[arrayToSearchIn[i]]);
+//     for(j=0; j<arrayToSearchIn.length; j++){
+//         if(numberOfA[arrayToSearchIn[i]]> numberOfA[arrayToSearchIn[j]]){
+//             var temp = numberOfA[arrayToSearchIn[i]];
+//             numberOfA[arrayToSearchIn[i] = numberOfA[arrayToSearchIn[j]]];
+//             numberOfA[arrayToSearchIn[j]] = temp;
+//         }
+//     }
+// }
+
+
+
+
 
 
 
