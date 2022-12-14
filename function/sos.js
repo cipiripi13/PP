@@ -216,15 +216,16 @@ console.log(printTheNextDay(24));
 // 4
 // 4321
 
-function printArray (array){
-    var string = array + "";
-    var tab =  "\n"
-    for(i=0; i<array.length; i++){
-        console.log(array[i]);
-    }
+// function printArray (array){
+//     var string = array + "";
+//     var tab =  "\n"
+//     for(i=0; i<array.length; i++){
+//         console.log(array[i]);
+//     }
     
-}
-printArray([78, 111, 4, 4321]);
+// }
+// printArray([78, 111, 4, 4321]);
+
 
 
 
