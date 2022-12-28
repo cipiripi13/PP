@@ -125,7 +125,7 @@ function find (array, element){
     var allSmaller = [];
     for(i=0; i<array.length; i++){
         if(array[i] < element){
-            allSmaller.push(array[i])  // ekvivaelnt allSmaller += array[i]
+            allSmaller.push(array[i])  // ekvivalent allSmaller += array[i]
         }
     }
     return allSmaller;
@@ -165,4 +165,287 @@ console.log(findPro(["JavaScript", "Programming", "fun", "product"]));
 // {name: ‘milk’, price: 80},
 // {name:’bananas’, price: 150}
 
-// var productsToBuy = [];
+ var productsToBuy = [
+    {name: "chocolate", price: 120},
+    {name: "lemon", price: 150},
+    {name: "banans",price: 180}
+ ];
+
+
+//  b. Write a function that calculates the total price of your shopping list.
+//  function calculateTotalPrice (array){
+//     var sum = 0;
+//     for(i=0; i<array.length; i++){
+//         sum += array[i].price;
+//         // console.log(sum);
+//     }
+//     return sum;
+//  }
+
+//  console.log(calculateTotalPrice(productsToBuy));
+
+ //II nacin
+
+ function sumTotal (array){
+    var total = 0;
+    array.forEach(element=> {
+        total += element.price;
+    })
+    return total;
+ }
+ console.log(sumTotal(productsToBuy));
+
+//  c. Write a function that calculates the average product price of your shopping list.
+// Print this value with the precision of three decimals.
+
+function averageOfList (array){
+    var average = 0;
+    array.forEach(element=>{   // foreach prolazi kroz sve elemente i radi nesto sa clanovima niza
+        average += element.price/array.length;    // prolazi kroz svaki element niza i sabira i deli sa brojem elemenata
+    })
+    return average.toFixed(3);   // zaokruzuje broj na tri decimale
+}
+console.log(averageOfList(productsToBuy));
+
+
+// d. Write a function that prints out the name of the most expensive product on your
+// shopping list. Write the name in uppercase.
+
+function mostExpensive (array){
+    var max = 0;
+    array.forEach(element=> {
+        max = Math.max(element.price);
+        
+    })
+   // console.log(max); vraca 180 0vde
+   var maxItemName = array.find((element) => element.price === max); // ugradjena metoda find,koja prima funkciju
+   // i kaze nam na osnovu kog parametra se radi pretraga 
+   return maxItemName.name.toUpperCase();  // prevodi u velika slova string
+}
+console.log(mostExpensive(productsToBuy));
+
+// 7.
+// a. Write a function that checks if a given string is written in all capitals.
+
+function chekUpperCase (string){
+    if(string.toUpperCase() === string){
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(chekUpperCase('kaca'));
+console.log(chekUpperCase('KACA'));
+
+// b. Write a function that checks if a given string contains any digits.
+
+function chekForDigit (string){
+    return /[0-9]/.test(string);  // testira string da li sadrzi broj u opsegu od 0 do 9
+}  // return /\d/.test(string);  -- drugi nacin gde d oznacava broj
+console.log(chekForDigit('25kj78l'));
+console.log(chekForDigit('cao'));
+
+
+// c. Write a function that checks if a given string is a valid hexadecimal color.
+
+
+
+var reg=/^#([0-9a-f]{3}){1,2}$/i;
+console.log(reg.test('#ABC')); //true
+console.log(reg.test('#AABBCC')); //true
+
+
+
+
+// regular function
+function isHexColor (hex) {
+    return typeof hex === 'string'
+        && hex.length === 6
+        && !isNaN(Number('0x' + hex))
+  }
+  
+  // or as arrow function (ES6+)
+  isHexColor = hex => typeof hex === 'string' && hex.length === 6 && !isNaN(Number('0x' + hex))
+  
+  console.log(isHexColor('AABBCC'))   // true
+  console.log(isHexColor('AABBCC11')) // false
+  console.log(isHexColor('XXBBCC'))   // false
+  console.log(isHexColor('AAXXCC'))   // false
+
+//   d. Write a function that checks if a given number belongs to the interval from 1900
+// to 2018.
+
+function chekInterval(number){
+    if(number>=1900 && number<2018){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(chekInterval(2000));
+console.log(chekInterval(2056));
+
+// function interval (number){
+//     min = 1900;
+//     max = 2018;
+//      return (number - min) * (number- max) <=0;
+// }  // 100 * -18 <=0
+//    // -1800 
+// console.log(interval(2000));
+// console.log(interval(-5));
+// console.log(interval(2950));
+
+// e. Write a function named validator that returns an object with properties
+// stringValidator, passwordValidator, colorValidator, and yearValidator referencing
+// the functions from a) to d).
+
+function Validator (stringV, passwordV, colorV, yearV){
+    this.stringValidator = chekUpperCase(stringV);
+    this.passwordValidator = chekForDigit(passwordV);
+    this.colorValidator = isHexColor(colorV);
+    this.yearValidator = chekInterval(yearV)
+}
+var resultV = new Validator ("Kaca", "hdhs78ik", "#111FFF", 2000);
+console.log(resultV);
+
+// 8. Write a function that calculates a number of days to your birthday.
+
+// Input: 25 February
+// Output: 5 days
+var birthday = new Date('5/13/2023');  //samo u stringu jer tako js prepoznaje te ugradjene objekte
+var today = new Date();
+//console.log(today);
+function calculateDaysToBirthday ( birthday, today){
+   var razlika = birthday.getTime() - today.getTime();
+   
+   var daysToBirthday = Math.ceil(razlika/(1000*3600*24))   // ili je ovo mogao da bude delilac ---8.64e7
+   return daysToBirthday;
+}
+console.log(calculateDaysToBirthday(birthday, today) + ' days until birthday');
+// const date = new Date();
+
+// let day = date.getDate();
+// let month = date.getMonth() + 1;
+// let year = date.getFullYear();
+
+// // This arrangement can be altered based on how we want the date's format to appear.
+// let currentDate = `${day}-${month}`;
+// console.log(currentDate);
+
+// var time = date.getTime();
+// console.log(time);
+
+
+// 9. Write a function that for a given departure and arrival time calculates the time the trip
+// takes.
+// Input: 8:22:13 11:43:22
+// Output: 3 hours 21 minutes 9 seconds
+
+function tripTime (timeD, timeA){
+    // sve delimo na cele brojeve i izbacujemo :
+    var depHours = parseInt(timeD.split(':')[0]);
+    var depMinutes = parseInt(timeD.split(':')[1]);
+    var depSeconds = parseInt(timeD.split(':')[2]);
+    var arHours = parseInt(timeA.split(':')[0]);
+    var arMinutes = parseInt(timeA.split(':')[1]);
+    var arSeconds = parseInt(timeA.split(':')[2]);
+    // console.log(depHours);
+    // console.log(depMinutes);
+    
+
+    //racunamo razliku izmedju sata minuta i sekunda
+    var hours = Math.abs(arHours - depHours);  // ako je negativna vrednost uz Math.abs prevedi u pozitivnu vrednost
+    var minutes = Math.abs(arMinutes - depMinutes);
+    var seconds = Math.abs(arSeconds - depSeconds);
+    //console.log(hours);
+   // console.log(minutes);
+/***********************************************************/
+// II NACIN
+    // ukoliko vrati negativnu vrednost 
+    // if(seconds < 0){
+    //     seconds +=60;
+    //     minutes -=1;
+    // }
+    // if(minutes < 0){
+    //     minutes +=60;
+    //     hours -=1;
+    // }
+    // na kraju vraca se duzina puta kao string
+    return `${hours} hours ${minutes} minutes ${seconds} seconds`;
+    
+    
+}
+
+console.log(tripTime("8:22:13", "11:43:22"));
+console.log(tripTime("8:26:13", "7:20:22"));
+/*********************************************************************************************************************/
+
+// 10.
+// a. Write a constructor function that creates points in space. Each point in space has
+// its own x, y, and z coordinate. For example, (3, 5, 1) can be a point in space.
+
+
+
+// 11.
+// a. Write a function that generates a random integer value between 5 and 20.
+// b. Write a function that generates a random integer value between 50 and 100.
+// c. Write a function which expects a number and a callback generator function and
+// returns an array of numbers produced by the generator function.
+
+
+// Pod a) zadatak
+function getRandomNumber (){
+    var n = 5;
+    var m = 20;
+    //math.random uvek vraca broj izmedju 0 i 1;
+    //Mozemo da podesimo rang u kome ce da trazi tako sto cemo da ga pomnozimo sa velicinom opsega i dodajuci donju granicu opsega
+    //Math.floor zaokruzuje broj na najblizi celi broj unutar naseg zeljenog opsega
+    var randomNumber = Math.floor(Math.random() * (m - n+1)+5);
+    console.log(randomNumber);
+}
+getRandomNumber();
+
+//Pod b) zadatak
+function getRandomNumber2 (n,m){
+   
+    //math.random uvek vraca broj izmedju 0 i 1;
+    //Mozemo da podesimo rang u kome ce da trazi tako sto cemo da ga pomnozimo sa velicinom opsega i dodajuci donju granicu opsega
+    //Math.floor zaokruzuje broj na najblizi celi broj unutar naseg zeljenog opsega
+    var randomNumber = Math.floor(Math.random() * (m - n+1)+5);
+    console.log(randomNumber);
+}
+getRandomNumber2(50,100);
+
+// c. Write a function which expects a number and a callback generator function and
+// returns an array of numbers produced by the generator function.
+
+function arrayGenNumbers(number){
+    var array = [];
+    for(var i=0; i<number; i++){
+        array.push(Math.floor(Math.random() * number))
+    }
+    return array;
+}
+console.log(arrayGenNumbers(5));
+console.log(arrayGenNumbers(8));
+
+// 12. Write a function that shuffles the elements of a given array.
+
+// Input: [3, 6, 11, 2, 9, 1]
+
+// Output: [6, 2, 9, 1, 3, 11] (it can be any random permutation of the given array)
+
+
+function shufflesArray (array){
+    var shuffleA = array.sort(function(){
+        return Math.random() - 0.5
+    })
+    return shuffleA;
+}
+console.log(shufflesArray([3, 6, 11, 2, 9, 1]));
+
+
+
+
+

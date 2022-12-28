@@ -1,7 +1,7 @@
 // constructor functiones
 
 function Recipe(n, ct, cm, ing, t, ins) {
-    {
+    
       this.name = n;
       this.cuisineType = ct;
       this.complexity = cm;
@@ -28,7 +28,7 @@ function Recipe(n, ct, cm, ing, t, ins) {
       }
     }
    
-  }
+  
 
  var p = new Recipe('paprikas', 'madjarska kuhinja', 2, ['paprike', 'luk', 'biber'], 60, 'sipati vodu u lonac...');
 //   console.log(p);

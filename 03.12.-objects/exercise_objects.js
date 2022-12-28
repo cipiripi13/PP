@@ -50,7 +50,7 @@ function creatObject (description, programLanguage, git, status){
 
         },
         isInDevelop: function(){
-            console.log(project.booleanStatus);
+            //console.log(project.booleanStatus);
             return project.booleanStatus;
         }
     }
