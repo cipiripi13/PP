@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer player</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 1800px;
+            height: 800px;
+       
+        background-image: url(field.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+            border: 2px solid black;
+           
+            
+        }
+        #button {
+            width: 100px;
+            height: fit-content;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            position: relative;
+            top: 400px;
+            right: -1600px;
+        
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    <img src="player.png" width="100px" alt="player" class="player">
+
+
+<button type="button" id="button" >Stop Moving</button>
+    </div>
+
+
+
+    <script src="soccer.js"></script>
+</body>
+</html>
