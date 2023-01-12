@@ -21,8 +21,8 @@ function alertText (){
 alertText();
 
 function changeText(){
-    document.querySelector('ul li').textContent;
+  //  document.querySelector('ul li:last-child').textContent;
 
- document.querySelector('ul li').textContent = "Some new paragraph text!";
+ document.querySelector('ul li:last-child').textContent = "Some new paragraph text!";
 }
 changeText();

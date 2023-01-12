@@ -10,7 +10,7 @@ field.addEventListener("click", function() {
     player.style.top = y + "px";
 })
 
-button.addEventListener('click', event => {
+button.addEventListener('click', function() {
     // Reload the page
     location.reload();  //na svaki klik na dugme refresh stranicu i vrati igraca na pocetak
   });

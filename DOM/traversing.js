@@ -18,3 +18,25 @@ function secondListActive (){
 
 }
 secondListActive();
+
+
+//II nacin
+
+// var parent = document.querySelector('div');
+// var firstList = parent.children[0];
+// var secondList = parent.children[1];
+// //console.log(parent);
+
+// var setBg = function(){
+//     for (var i = 0; i < secondList.children.length; i++) {
+//         if (secondList.children[i].classList.contains("active")) {
+//           secondList.children[i].classList.remove("active");
+//           break;
+//         }
+        
+//          }
+//       firstList.children[1].classList.add("active");
+//       firstList.children[1].style.fontStyle = 'italic';
+      
+//     };
+// setBg();

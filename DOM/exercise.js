@@ -43,13 +43,7 @@ var listItemNode = document.createElement('li');
 fourListNode.appendChild(listItemNode);
 
 var bodyNode = document.querySelector('body');
-// for(i=0; i<3; i++){
-//     listItemNode = document.createElement('li');
-//     var text = document.createTextNode('m');
-//     listItemNode.appendChild(text);
-//     bodyNode.appendChild(fourListNode)
-//     fourListNode.appendChild(listItemNode);
-// }
+
  bodyNode.appendChild(fourListNode);
  var tekst = document.createTextNode('Cao');
  listItemNode.appendChild(tekst);

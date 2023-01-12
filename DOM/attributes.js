@@ -2,10 +2,10 @@
 // The function checks each input element that belongs to the form.
 // If the element has the required attribute and no data, it should get red borders.
 
-function validateForm (form){
-    var form = document.getElementsByTagName('form');
+function validateForm (){
+    var form = document.querySelector('form');
 
-    var inputs = form.getElementsByTagName('input');
+    var inputs = document.querySelectorAll('input');
 
     
 
@@ -21,7 +21,5 @@ function validateForm (form){
     return inputs
    
 }
-//validateForm();
- var form = document.querySelector('form');
-console.log(validateForm(form));
+validateForm();
 
