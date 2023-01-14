@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 //create iif that holds all code
 

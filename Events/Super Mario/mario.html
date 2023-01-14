@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario</title>
+    <style>
+        .container{
+            
+            border: 1px solid black;
+            height:  100vh;
+            background-color: blue;
+            background-size: contain;
+            /* background-image: url(./images/bg.jpg); */
+            margin:  0 auto;
+           
+
+        }
+      
+         .ground{
+            background-image: url(./images/ground.jpg);
+             display: block;
+            height: 300px;
+            width: 500%;
+            
+            position: absolute;
+            bottom: 0;
+            
+             left: 0;
+            right: 0;
+            z-index: 1;
+            background-repeat: repeat-x; 
+            animation: container 5s linear infinite; 
+        }
+         @keyframes ground{
+            100% {
+                transform: translateX(-3400px);
+            } 
+         } 
+        #mario{
+            background-image: url(./images/mario.png);
+            display: none;
+            width: 120px;
+            height: 150px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            
+            bottom: 150;
+            left: 650;
+            /* z-index: 2; */
+        
+
+        }
+        #running-mario{
+            background-image: url(./images/mario_running.gif);
+            width: 210px;
+            height: 300px;
+            display: none;
+            position: relative;
+            top: 110px;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <div></div>
+    <div id="mario"></div>
+    <div id="running-mario"></div>
+</div>
+
+    <script src="mario.js"></script>
+</body>
+</html>
