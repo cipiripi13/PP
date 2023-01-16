@@ -26,6 +26,9 @@ function WebApp (name, url, technologies, licence, stars){
    this.technologies = technologies;
    
 }
+WebApp.prototype.getData = function(){
+    console.log();
+}
 
 function MobileApp (name, platform, licence, stars){
     AllApps.call(this, name, licence, stars);
