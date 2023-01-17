@@ -24,9 +24,9 @@ class WebApp extends App{
 
     //zasto vraca undefined???
     getData(){
-        console.log(
-            super.getDataApp()
-        );
+        
+            super.getDataApp();
+        
     }
     reactBased(){
         if(this.technologies === 'React'){
@@ -57,7 +57,7 @@ class MobileApp extends App {
 var firstWebApp = new WebApp("GoogleMaps", "www.googlemaps.com","React","CC",3);
 console.log(firstWebApp);
 console.log(firstWebApp.reactBased());
-firstWebApp.getData(); //undefined
+firstWebApp.getData(); 
 
 var firstMobileApp = new MobileApp('To do app', 'www.todoapp.com', 'good', 4);
 console.log(firstMobileApp);
