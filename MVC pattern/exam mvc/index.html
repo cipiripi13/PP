@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam MVC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Exam statistics</h1>
+    <!-- HEADER START -->
+    <header>
+        <h3>Exam statistics June</h3>
+        <h4>Total stidents: %count%</h4>
+        <div class="passed">
+            <div class="number">Passed</div>
+        </div>
+        <div class="failed">
+            <div class="numberFailed">Failed</div>
+        </div>
+    </header>
+    <!-- HEADER ENDS -->
+
+    <!-- FORM START -->
+    <form>
+        <!-- First class to enter data about student -->
+        <div class="aboutStudent">
+            <select name="" id="subject">
+                <option value="Choose Your Subject">Choose Your Subject</option>
+                <option value="Java Script">Java Script</option>
+                <option value="Phyton">Phyton</option>
+                <option value="Java">Java</option>
+            </select>
+    
+            <!-- ENTER NAME AND SURANME -->
+            <input type="text" placeholder="Name Surname" id="name">
+    
+            <!-- CHOOSE YOUR GRADE -->
+            <select name="" id="Grades">
+                <option value="Choose Your Grade">Choose Your Grade</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+    
+            <!-- BUTTON ADD -->
+            <input type="button" value="ADD" id="add">
+        </div>
+        
+
+
+        <!-- FINAL LIST OF STUDENTS WHO PASSED OR FAILED -->
+        <div class="finalList">
+            <label for="pass">Passed</label>
+        <select name="" id="passesExam">
+            <option value="" id="pass">--</option>
+        </select>
+
+        <label for="pass">Failed</label>
+        <select name="" id="failesExam">
+            <option value="" id="failes">--</option>
+        </select>
+        </div>
+        
+    </form>
+</body>
+</html>

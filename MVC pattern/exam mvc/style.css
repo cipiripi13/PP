@@ -1,0 +1,76 @@
+/* HEADER STYLE START */
+header{
+    background-image: url(pexels-photo-762686.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: fit-content;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+header h3, h4{
+    color: white;
+    text-align: center;
+    
+
+}
+.passed, .failed{
+    border: 1px solid black;
+    text-transform: uppercase;
+    
+    width: 40%;
+    margin: auto;
+    margin-bottom: 15px;
+    
+}
+.number, .numberFailed {
+    text-align: left;
+    padding: 10px;
+}
+.number{
+    background-color: rgb(56, 163, 110);
+}
+.numberFailed{
+    background-color: tomato ;
+}
+/* HEADER STYLE ENDS */
+/* ************************************************************************** */
+
+/* FORM STYLE START */
+.aboutStudent{
+    background-color: rgb(94, 144, 189);
+    background-size: cover;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.aboutStudent select{
+    height: 30px;
+    background-color: rgb(94, 144, 189);
+    color: white;
+    margin-right: 10px;
+    border-color: white;
+    
+}
+#name {
+    margin-right: 10px;
+    border-radius: 20px;
+    border-color: white;
+}
+#add{
+    border: none;
+    color: green;
+    background-color: rgb(94, 144, 189);
+    font-size: x-large;
+}
+/* FORMS STYLE ENDS */
+/* ********************************************************** */
+
+/* FINAL SELECT START STYLE */
+.finalList{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    background-size: cover;
+}
+/* FINAL SELECT ENDS */
