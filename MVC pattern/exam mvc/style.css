@@ -72,5 +72,18 @@ header h3, h4{
     justify-content: center;
     background-color: white;
     background-size: cover;
+    flex-direction: row;
+    
+
+}
+.finalList label{
+        margin-right: 10px;
+        text-transform: uppercase;
+        
+}
+.finalList select{
+    width: 20%;
+    padding: 10px;
+    
 }
 /* FINAL SELECT ENDS */
