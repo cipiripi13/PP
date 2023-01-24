@@ -3,7 +3,7 @@ header{
     background-image: url(pexels-photo-762686.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    max-height: fit-content;
+    /* max-height: fit-content; */
     padding: 10px;
     margin-bottom: 20px;
 }
