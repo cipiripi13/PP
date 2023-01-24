@@ -1,3 +1,6 @@
+// pravimo konstruktorske funkcije koje kreiraju nove objekte
+
+
 function Festival(){
     this.listOfMovies = [];
     this.listOfPrograms = [];
@@ -19,6 +22,7 @@ Movie.prototype.getGenre = function(){
 }
 
 Movie.prototype.getData = function(){
+    //vraca nam sve podatke o filmu i koristimo kasnije u controller
     return this.title + ', ' + this.length + ' min, ' + this.getGenre();
 }
 

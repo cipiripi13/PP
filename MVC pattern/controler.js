@@ -1,4 +1,12 @@
+// ovo je KONTROLER koji zapravo kontrolise aplikaciju
+
+
+// festival objekat ce zapravo da sadrzi sve nase filmove i sve programe
+// MOZAK CELE APLIKACIJE
+//jer kako dodajemo neki film on ce se dodavati na lisu filmova i posle upisivati u program listu
 var festival = new Festival();
+
+
 // Prvo smo hvatali sve buttone iz html-a
 var createMovieButton = document.getElementById('create-movie');
 var createProgramButton = document.getElementById('create-program');
@@ -17,7 +25,7 @@ var inputDateElement = document.getElementById('date');
 var programErrorParagraph = document.getElementById('program-error');
 var programListElement = document.getElementById('program-list');
 
-var movieToProgramElement = document.querySelector('.addMovieToProgram');
+var movieToProgramElementError = document.querySelector('.addMovieToProgramError');
 var finalAddtoList = document.querySelector('.finalAdd');
 
 
@@ -58,18 +66,24 @@ function addMovie(){
     // na listu dodajemo novi li sa tekst contetom iz inputa
     movieList.appendChild(movieLi);
 
-    var movieOption = document.createElement('option');
-    movieOption.textContent = movie.title;
-    var index = festival.listOfMovies.length - 1;
-    movieOption.setAttribute('value', index);
-    selectMovie.appendChild(movieOption);
 
+    // nakon sto se sve unelo i prolsedilo ocisti podatke iz inputa
     inputTitleElement.value = '';
     inputLengthElement.value = '';
     inputGenreElement.value = '';
-    
 
+
+    //krieamo da nam film bude opcija u donjoj formi gde je movie
+    var movieOption = document.createElement('option');
+    // kao tekst elem prikazivace se samo naslov filma
+    movieOption.textContent = movie.title;
+    var index = festival.listOfMovies.length - 1;
+    // setujemo value iz optiona da bude uvek poslednje sto dodamo
+    movieOption.setAttribute('value', index);
+    // i spojimo na listu move u drugoj formi
+    selectMovie.appendChild(movieOption);
 }
+
 
 function addProgram(){
     var dateInputElement = inputDateElement.value;
@@ -98,6 +112,8 @@ function addProgram(){
     option.textContent = program.getData();
     selectProgram.appendChild(option);
 
+    inputDateElement.value = '';
+
 }
 
 
@@ -105,10 +121,27 @@ function finalAdd(){
     var movieIndex = selectMovie.value;
     var programIndex = selectProgram.value;
 
-    if(!movieIndex || programIndex){
-        movieToProgramElement.textContent = 'Invalid input';
+    var movie = festival.listOfMovies[movieIndex];
+
+    var program = festival.listOfPrograms[programIndex];
+    // program.addMovie(movie);
+
+    if(!movieIndex || !programIndex){
+        movieToProgramElementError.textContent = 'Invalid input';
+        movieToProgramElementError.style.color = 'red';
+    } else{
+        var liForMovieToProgram = document.createElement('li');
+        liForMovieToProgram.textContent = movie.getData() + ' you can watch on this date -' +  program.getData();
+        
+        liForMovieToProgram.setAttribute('class', 'lisItemFinal-' + movieIndex);
+        // console.log(liForMovieToProgram);
+        finalAddtoList.appendChild(liForMovieToProgram);
+
+
     }
-    program.addMovie(movie);
+    selectMovie.value = '';
+    selectProgram.value = '';
+    
 }
 
 
