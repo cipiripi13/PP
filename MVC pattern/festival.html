@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="festival.css">
+</head>
+<body>
+    <h1>Movie Festival</h1>
+    <div class="wrapper">
+        <p>Please fill out this form</p>
+        <p>Movie</p>
+
+        <form>
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <label for="length">Length(min)</label>
+            <input type="text" id="length">
+
+            <select id="genre">
+                <option value="--">--Select--</option>
+                <option value="drama">Drama</option>
+                <option value="comedy">Comedy</option>
+                <option value="action">Action</option>
+                <option value="horror">Horror</option>
+                <option value="sci-fi">Sci-fi</option>
+                <option value="thriler">Thriler</option>
+                <option value="cartoon">Cartoon</option>
+            </select>
+            <input type="button" value="Create Movie" class="button" id="create-movie">
+            <br>
+            <p id="movie-error"></p>
+          <ul id="movie-list"></ul>
+        </form>
+        
+        <p>Program</p>
+        <form>
+            <label for="date">Date</label>
+            <input type="date" id="date">
+            <input type="button" value="Create Program" class="button" id="create-program">
+
+            <p id="program-error"></p>
+            <ul id="program-list"></ul>
+
+            <label for="movie-select">Movie</label>
+            <select id="movie-select">
+                <option value="">--</option>
+            </select>
+            <label for="program-select">Program</label>
+            <select id="program-select">
+                <option value="">--</option>
+            </select>
+
+            <input type="button" value="Add movie to program list" class="button" id="add-movie">
+            <p class="addMovieToProgram"></p>
+            <ul class="finalAdd"></ul>
+
+
+        </form>
+
+    </div>
+
+
+    <script src="entites.js"></script>
+    <script src="controler.js"></script>
+</body>
+</html>
