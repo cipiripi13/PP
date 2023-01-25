@@ -4,11 +4,13 @@ class Student {
         this.surname = surname;
     }
     getStudentData(){
-        return this.name + " " +  this.surname;
+        var firstLetterName = this.name[0].toUpperCase() + this.name.slice(1);
+        var firstLetterSurname = this.surname[0].toUpperCase() + this.surname.slice(1);
+        return firstLetterName + " " +  firstLetterSurname;
     }
 }
 
 
 //Testing
-// var kacaK = new Student('Katarina', 'Krstic');
-// console.log(kacaK.getStudentData());
+var kacaK = new Student('katarina', 'Krstic');
+console.log(kacaK.getStudentData());

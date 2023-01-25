@@ -8,7 +8,9 @@ class Subject {
 }
 
 
-//Testing if it works
+
+
+//Testing if works
 // var js = new Subject('Java script');
 // console.log(js);
 // console.log(js.getSubjectName());

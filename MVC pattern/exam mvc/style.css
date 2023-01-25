@@ -68,22 +68,36 @@ header h3, h4{
 
 /* FINAL SELECT START STYLE */
 .finalList{
+
     display: flex;
     justify-content: center;
-    background-color: white;
-    background-size: cover;
+    background-color: rgb(236, 200, 200);
+    height: auto;
     flex-direction: row;
+    
     
 
 }
-.finalList label{
+#passesExam, #failesExam{
+        
         margin-right: 10px;
         text-transform: uppercase;
+        position: relative;
         
 }
-.finalList select{
+#passesExamList, #failesExamList{
     width: 20%;
-    padding: 10px;
+    height: auto;
+    display: block;
+    
+    margin-right: 10px;
+    position: relative;
+    top: 20px;
+}
+.passLi, .failesLi{
+    list-style: none;
+    text-transform: none;
     
 }
+
 /* FINAL SELECT ENDS */

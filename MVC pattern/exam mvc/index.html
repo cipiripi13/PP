@@ -37,7 +37,7 @@
             <input type="text" placeholder="Name Surname" id="name">
     
             <!-- CHOOSE YOUR GRADE -->
-            <select name="" id="Grades">
+            <select name="" id="grades">
                 <option value="Choose Your Grade">Choose Your Grade</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -53,24 +53,20 @@
     
             <!-- BUTTON ADD -->
             <input type="button" value="ADD" id="add">
+            
         </div>
+        <p class="first-error-message"></p>
         
 
 
         <!-- FINAL LIST OF STUDENTS WHO PASSED OR FAILED -->
         <div class="finalList">
-            <label for="passesExam">Passed</label>
-            
-        <select name="" id="passesExam">
-            
-            <option value="" id="pass">--</option>
-        </select>
+            <p id="passesExam">Passed</p>
+            <ul id="passesExamList"></ul> 
+    
 
-        <label for="failesExam">Failed</label>
-        
-        <select name="" id="failesExam">
-            <option value="" id="failes">--</option>
-        </select>
+            <p id="failesExam">Failed</p>
+            <ul id="failesExamList"></ul>
         </div>
         
     </form>
@@ -78,6 +74,7 @@
     <script src="./js files/subject.js"></script>
     <script src="./js files/student.js"></script>
     <script src="./js files/exam.js"></script>
+    <script src="./js files/form.js"></script>
     
 </body>
 </html>
