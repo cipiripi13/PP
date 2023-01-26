@@ -14,10 +14,12 @@
         <h3>Exam statistics June</h3>
         <h4>Total stidents: %count%</h4>
         <div class="passed">
-            <div class="number">Passed</div>
+            <div class="numberPassed">Passed</div>
+            <span id="spanPassed"></span>
         </div>
         <div class="failed">
             <div class="numberFailed">Failed</div>
+            <span id="spanFailed"></span>
         </div>
     </header>
     <!-- HEADER ENDS -->
@@ -27,7 +29,7 @@
         <!-- First class to enter data about student -->
         <div class="aboutStudent">
             <select name="" id="subject">
-                <option value="Choose Your Subject">Choose Your Subject</option>
+                <option value="">Choose Your Subject</option>
                 <option value="Java Script">Java Script</option>
                 <option value="Phyton">Phyton</option>
                 <option value="Java">Java</option>
@@ -38,7 +40,7 @@
     
             <!-- CHOOSE YOUR GRADE -->
             <select name="" id="grades">
-                <option value="Choose Your Grade">Choose Your Grade</option>
+                <option value="">Choose Your Grade</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

@@ -22,15 +22,18 @@ header h3, h4{
     margin-bottom: 15px;
     
 }
-.number, .numberFailed {
+.numberPassed, .numberFailed {
     text-align: left;
     padding: 10px;
 }
-.number{
+.numberPassed{
     background-color: rgb(56, 163, 110);
 }
 .numberFailed{
     background-color: tomato ;
+}
+#spanPassed, #spanFailed{
+    float: right;
 }
 /* HEADER STYLE ENDS */
 /* ************************************************************************** */

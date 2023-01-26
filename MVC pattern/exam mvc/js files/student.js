@@ -4,13 +4,20 @@ class Student {
         this.surname = surname;
     }
     getStudentData(){
-        var firstLetterName = this.name[0].toUpperCase() + this.name.slice(1);
-        var firstLetterSurname = this.surname[0].toUpperCase() + this.surname.slice(1);
-        return firstLetterName + " " +  firstLetterSurname;
-    }
+        // if (this.name[0] !== this.name[0].toUpperCase()) {
+        //     return 'First name should start with capital letter';
+
+        // }
+        // if (this.surname[0] !== this.surname[0].toUpperCase()) {
+        //     return 'Last name should start with capital letter';
+            
+    // }
+    return this.name + " " + this.surname;
+}
 }
 
 
+
 //Testing
-var kacaK = new Student('katarina', 'Krstic');
+var kacaK = new Student('Katarina', 'krstic');
 console.log(kacaK.getStudentData());
