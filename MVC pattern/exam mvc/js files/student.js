@@ -4,14 +4,14 @@ class Student {
         this.surname = surname;
     }
     getStudentData(){
-        // if (this.name[0] !== this.name[0].toUpperCase()) {
-        //     return 'First name should start with capital letter';
+        if (this.name[0] !== this.name[0].toUpperCase()) {
+            return 'First name should start with capital letter';
 
-        // }
-        // if (this.surname[0] !== this.surname[0].toUpperCase()) {
-        //     return 'Last name should start with capital letter';
+        }
+        if (this.surname[0] !== this.surname[0].toUpperCase()) {
+            return 'Last name should start with capital letter';
             
-    // }
+     }
     return this.name + " " + this.surname;
 }
 }
