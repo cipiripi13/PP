@@ -53,22 +53,13 @@ function collectData () {
         spanElement.textContent = counterPass;
         numberPassedStudents.appendChild(spanElement);
         
-        
-        
-        
-
-        
     } else{
         liElementToAdd.textContent = nameSurnameInput.value + ', grade: ' + gradeSelect.value + ' ' + choosenSubject.value;
         liElementToAdd.setAttribute('class', 'failesLi' );
         listFailes.appendChild(liElementToAdd);
         counterFailed++;
         spanEFailed.textContent = counterFailed;
-        numberFailedStudents.appendChild(spanEFailed);
-
-        
-        
-    
+        numberFailedStudents.appendChild(spanEFailed);  
 }
 
 //ispraniti vrednost kod unosa u formi svaki put nakon sto ukucamo
