@@ -23,8 +23,12 @@ var module1 = (function(){
     var multiply = function(a,b){
         return a*b;
     }
+    var oduzimanje = function(x,y){
+        return x-y;
+    }
     return {
         sum: sum,
         multiply: multiply,
+        oduzimanje: oduzimanje
     }
 })();
