@@ -1,9 +1,12 @@
  var student = new Student();
 //  console.log(student);
 // brojaci
-var counter = 0;
+var counterTotal = 0;
 var counterPass = 0;
 var counterFailed = 0;
+var totalStudents = document.getElementById('total');
+var percentage = document.getElementById('percentage');
+
 //● write a function that collects all the data from the form
 var choosenSubject = document.getElementById('subject');
 var nameSurnameInput = document.getElementById('name');
@@ -61,7 +64,11 @@ function collectData () {
         spanEFailed.textContent = counterFailed;
         numberFailedStudents.appendChild(spanEFailed);  
 }
+counterTotal = counterPass + counterFailed;
+totalStudents.textContent= counterTotal;
 
+var prolaznost = (counterPass*100)/counterTotal;
+percentage.textContent = Math.floor(prolaznost);
 //ispraniti vrednost kod unosa u formi svaki put nakon sto ukucamo
     choosenSubject.value = '';
     nameSurnameInput.value = '';
