@@ -132,6 +132,7 @@ function finalAdd(){
     } else{
         var liForMovieToProgram = document.createElement('li');
         liForMovieToProgram.textContent = movie.getData() + ' you can watch on this date -' +  program.getData();
+        movieToProgramElementError.textContent = '';
         
         liForMovieToProgram.setAttribute('class', 'lisItemFinal-' + movieIndex);
         // console.log(liForMovieToProgram);
@@ -139,6 +140,7 @@ function finalAdd(){
 
 
     }
+    
     selectMovie.value = '';
     selectProgram.value = '';
     
