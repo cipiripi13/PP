@@ -64,9 +64,12 @@ function collectData () {
         spanEFailed.textContent = counterFailed;
         numberFailedStudents.appendChild(spanEFailed);  
 }
+
+//vraca ukupan broj studenata koji izadju na ispit
 counterTotal = counterPass + counterFailed;
 totalStudents.textContent= counterTotal;
 
+//merimo ukupnu prolaznost
 var prolaznost = (counterPass*100)/counterTotal;
 percentage.textContent = Math.floor(prolaznost);
 //ispraniti vrednost kod unosa u formi svaki put nakon sto ukucamo
