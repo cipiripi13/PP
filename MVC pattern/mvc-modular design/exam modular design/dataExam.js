@@ -52,9 +52,9 @@ var dataModule = (function(){
        }
        hasPassed(){
            if(this.grade > 5){
-               return 'Passed';
+               return true;
            } else {
-               return 'Failed'
+               return false;
            }
        }   
        };

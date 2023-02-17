@@ -27,6 +27,14 @@ var spanElement = document.getElementById('spanPassed');
 
 var spanEFailed = document.getElementById('spanFailed');
 
+    var collectData = function(){
+         var subjectToChoose = choosenSubject.value;
+         var chooseNameSurname = nameSurnameInput.value;
+         var chooseGrade = gradeSelect.value;
+
+         return(subjectToChoose, chooseNameSurname, chooseGrade);
+    }
+
     var validateForm = function(){
         if(!choosenSubject.value || !nameSurnameInput.value|| !gradeSelect.value){
             firstErrorMessage.textContent = 'Please fill out all fields';
@@ -45,18 +53,23 @@ var spanEFailed = document.getElementById('spanFailed');
 
         var liElementToAdd = document.createElement('li');
         
-        if(gradeSelect.value > 5){
             liElementToAdd.textContent = nameSurnameInput.value + ', grade: ' + gradeSelect.value + ' ' +  choosenSubject.value;
             liElementToAdd.setAttribute('class', 'passLi');
             ListPass.appendChild(liElementToAdd);
-            
-        } else {
-            liElementToAdd.textContent = nameSurnameInput.value + ', grade: ' + gradeSelect.value + ' ' + choosenSubject.value;
-            liElementToAdd.setAttribute('class', 'failesLi' );
-            listFailes.appendChild(liElementToAdd);
-       
-            
-    }
+         
+
+    choosenSubject.value = '';
+    nameSurnameInput.value = '';
+    gradeSelect.value = '';
+}
+
+    var updateFailedList = function(){
+        var liElementToAdd = document.createElement('li');
+    
+            liElementToAdd.textContent = nameSurnameInput.value + ', grade: ' + gradeSelect.value + ' ' +  choosenSubject.value;
+            liElementToAdd.setAttribute('class', 'passLi');
+            ListPass.appendChild(liElementToAdd);
+    
             
 
     choosenSubject.value = '';
@@ -80,13 +93,11 @@ var spanEFailed = document.getElementById('spanFailed');
     //     } 
     //     return counterPass;
     // }
-   
-
-
-
     return{
+        collectData: collectData,
         validateForm: validateForm,
         updateListPassed: updateListPassed,
+        updateFailedList: updateFailedList
       
         // countStudents: countStudents
        
