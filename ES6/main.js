@@ -62,9 +62,48 @@ const user1 = {
 console.log(user1.sayHello('Pozdrav'));   //Pozdrav Kaca Krstic
 
 
+//konkatenacija
+console.log(user1.lastName + ", " + user1.name); 
+
+// pisanje uz BACKTICKS
+console.log(`${user1.lastName}, ${user1.name} `);
+
 let templateString = `
 naslov
 naslov br 2
 podrzava prelzak u novii red`;
 console.log(templateString);  // sve ce se ovako prikazati u konzoli
 
+
+/*******************************************************************************************************************/ 
+//DEFAULT PARAMETERS
+
+function sumTwoN(a,b){
+    return a + b;
+}
+sumTwoN(22, 33); // kada prolsedimo vrednosti
+
+//medjutim
+//nacin setovanja unutar fje ako ne posaljemo parametre, da imamo kao neke default vrednosti
+function sum (a,b){
+     a = a || 0;  // a ce uzeti truthy vrednost - to je vred koju joj prolsedimo, ako ne bice falsy vred
+     b = b || 0;
+    return a+b;
+}
+console.log(sum());  // vratice nula
+// zato sto ce a i b biti undefined to su falsey vrednosti i samim tim uzimaju nulu iz uslova
+
+//pisanje u es6
+
+function sum2 (a=0, b=0){ // untar same fje tj.njenih parametara postavljamo default vrednosti
+    return a + b;
+}
+console.log(sum2());  //0
+console.log(sum2(2, 3)); //5
+
+//primer 2
+
+function logActivity (name ='blaBla', activity = 'running'){
+    console.log(`${name} loves ${activity}`);
+}
+logActivity();  //blaBla loves running
