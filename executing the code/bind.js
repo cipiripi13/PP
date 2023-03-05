@@ -27,7 +27,17 @@ user.sayHello.call(user1, 'Zdravo');       //stampa Zdravo Dario!
 // call prima onoliko parametara koliko prima originalna fja i plus (+) jos jedan, ato je objekat nad kojim cemo pozivati 
 // tu metodu
 /*****************************************************************************************************/
+
+
 //APPLY 
 //prima 2 parametra, prvi je objekat, drugi je niz u kome se nalaze svi ostali parametri funkcije
 user.sayHello.apply(user1, ['vOZDRA']);
+/**************************************************************************************************/
+
+//BIND
+//ova fja se ne izvrsava odmah
+//vec bind kreira novu fja koja ce se izvrsiti tek nakon pozivanja newFunction u kojoj ce i biti smestena
+var newFunction = user.sayHello.bind(user1, 'caos');
+newFunction();  //caos Dario!
+
 
