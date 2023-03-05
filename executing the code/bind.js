@@ -37,6 +37,7 @@ user.sayHello.apply(user1, ['vOZDRA']);
 //BIND
 //ova fja se ne izvrsava odmah
 //vec bind kreira novu fja koja ce se izvrsiti tek nakon pozivanja newFunction u kojoj ce i biti smestena
+//
 var newFunction = user.sayHello.bind(user1, 'caos');
 newFunction();  //caos Dario!
 
