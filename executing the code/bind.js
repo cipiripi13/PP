@@ -24,3 +24,10 @@ user.sayHello.call(user1, 'Zdravo');       //stampa Zdravo Dario!
 
 
 // ovim smo samo pozajmili metodu prvog objekta ali kao this koristimo drugi objekat, umesto svog prvobitnog
+// call prima onoliko parametara koliko prima originalna fja i plus (+) jos jedan, ato je objekat nad kojim cemo pozivati 
+// tu metodu
+/*****************************************************************************************************/
+//APPLY 
+//prima 2 parametra, prvi je objekat, drugi je niz u kome se nalaze svi ostali parametri funkcije
+user.sayHello.apply(user1, ['vOZDRA']);
+
