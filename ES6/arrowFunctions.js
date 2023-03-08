@@ -34,6 +34,11 @@ const str = 'flexiple';
 const str2 = str.charAt(0).toUpperCase() + str.slice(1);
 console.log(str2);
 
+//primeri sa prezentacije
+const ar = [1, 2, 3, 4];
+const double = ar.map(x=> x*2);
+console.log(double);
+
 
 
 
@@ -79,6 +84,13 @@ let articles = [
     name: 'Orange',
     price: 100
   }];
+
+ for(var i=0; i<articles.length; i++){
+  //console.log(articles[i]);
+  for(var j=0; j<articles[i].length; i++){
+    console.log(j);
+  }
+ }
 
 
 //6.
