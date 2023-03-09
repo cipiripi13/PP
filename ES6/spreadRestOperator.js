@@ -45,3 +45,11 @@ let user1 = {
 let {name, ...restofUser} = user1;
 console.log(restofUser); // stampace sve samo bez imena
 
+//menjamo ...args
+function format(...args){
+  return args.map(a => a.toUpperCase());
+
+}
+let result = format('cao', 'hello', 'pozdrav');
+console.log(result);
+
